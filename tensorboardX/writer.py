@@ -271,10 +271,10 @@ class SummaryWriter(object):
         if 'purge_step' in kwargs.keys():
             most_recent_step = kwargs.pop('purge_step')
             self.file_writer = FileWriter(logdir=log_dir, **kwargs)
-            self.file_writer.add_event(
-                Event(step=most_recent_step, file_version='brain.Event:2'))
-            self.file_writer.add_event(
-                Event(step=most_recent_step, session_log=SessionLog(status=SessionLog.START)))
+            #self.file_writer.add_event(
+            #    Event(step=most_recent_step, file_version='brain.Event:2'))
+            #self.file_writer.add_event(
+            #    Event(step=most_recent_step, session_log=SessionLog(status=SessionLog.START)))
         else:
             self.file_writer = FileWriter(logdir=log_dir, **kwargs)
 
